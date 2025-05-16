@@ -26,12 +26,12 @@ def set_bg_image(image_path):
     st.markdown(style, unsafe_allow_html=True)
 set_bg_image('car_background.png')
 
-file_id = "1f1cRNbKrnmse_GvnQkS6UYS61bRRcT_t" 
-url = f"https://drive.google.com/uc?export=download&id={file_id}"
+url = "https://huggingface.co/spaceegg13/car_price_model.pkl/resolve/main/car_price_model_comp.pkl"
 output_path = "car_price_model.pkl"
 
 if not os.path.exists(output_path):
     response = requests.get(url)
+    response.raise_for_status()
     with open(output_path, "wb") as f:
         f.write(response.content)
 
