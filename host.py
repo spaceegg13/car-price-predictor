@@ -25,7 +25,7 @@ def set_bg_image(image_path):
     st.markdown(style, unsafe_allow_html=True)
 set_bg_image('car_background.png')
 
-url = "https://drive.google.com/drive/folders/1hKMthIrR_ylrUoay-UOzDVk2L6hE_OxY"
+url = "https://drive.google.com/file/d/1j9pwBMiGvD1MZ42sHZxRpstFTVfvY5E9/view?usp=drive_link"
 with open("car_price_model.pkl", "wb") as f:
     f.write(requests.get(url).content)
 
