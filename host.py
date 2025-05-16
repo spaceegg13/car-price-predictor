@@ -26,7 +26,7 @@ def set_bg_image(image_path):
 set_bg_image('car_background.png')
 
 url = "https://drive.google.com/uc?export=download&id=1f1cRNbKrnmse_GvnQkS6UYS61bRRcT_t"
-with open("car_price_model.pkl", "wb") as f:
+with open("car_price_model_comp.pkl", "wb") as f:
     f.write(requests.get(url).content)
 
 model=joblib.load('car_price_model.pkl')
