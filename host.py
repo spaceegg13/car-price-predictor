@@ -3,6 +3,7 @@ import pandas as pd
 import joblib
 from PIL import Image
 import base64
+import requests
 def set_bg_image(image_path):
     with open(image_path, "rb") as f:
         img_data = f.read()
@@ -23,6 +24,11 @@ def set_bg_image(image_path):
     """
     st.markdown(style, unsafe_allow_html=True)
 set_bg_image('car_background.png')
+
+url = "https://drive.google.com/drive/folders/1hKMthIrR_ylrUoay-UOzDVk2L6hE_OxY"
+with open("car_price_model.pkl", "wb") as f:
+    f.write(requests.get(url).content)
+
 model=joblib.load('car_price_model.pkl')
 marque_encoder=joblib.load('marque_encoder.pkl')
 modele_encoder=joblib.load('modele_encoder.pkl')
