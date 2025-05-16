@@ -35,7 +35,7 @@ if not os.path.exists(output_path):
     with open(output_path, "wb") as f:
         f.write(response.content)
 
-model=joblib.load('car_price_model.pkl')
+model=joblib.load(output_path)
 marque_encoder=joblib.load('marque_encoder.pkl')
 modele_encoder=joblib.load('modele_encoder.pkl')
 carburant_encoder=joblib.load('carburant_encoder.pkl')
